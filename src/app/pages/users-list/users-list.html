@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Lista de Usuários</h1>
+
+  <div *ngIf="loading" class="status">Carregando...</div>
+  <div *ngIf="erro" class="status erro">Erro ao carregar usuários.</div>
+
+  <div class="cards">
+
+    <div class="card" *ngFor="let user of usuarios">
+      <h2>{{ user.name }}</h2>
+
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Telefone</strong> {{ user.phone }}</p>
+      <p><strong>Website</strong> {{ user.website }}</p>
+      <p><strong>Cidade:</strong> {{ user.address.city }}</p>
+      <p><strong>Empresa:</strong> {{ user.company.name }}</p>
+
+      <a class="btn" [routerLink]="['/users', user.id]">
+        Ver detalhes →
+      </a>
+    </div>
+
+  </div>
+</div>
