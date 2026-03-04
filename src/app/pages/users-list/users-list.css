@@ -11,23 +11,66 @@ h1 {
 }
 
 .card {
-  background: #f3f3f3;
+  background:  rgb(250, 231, 240);
   padding: 25px;
   border-radius: 15px;
-  margin-bottom: 30px; /* ← aqui separa os cards */
+  margin-bottom: 30px; /* separa os cards */
 }
 
 .card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px); /* Faz os card se mexer para frente quando eu aproximo*/
 }
 
-.btn {
+.button {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 14px;
-  background-color: #3062ec;
+  background-color: #fa6ad6;
   color: white;
   text-decoration: none;
   border-radius: 6px;
   transition: 0.3s;
+}
+
+h3{
+    color: #e24ebd;
+    font-family: 'Montserrat';
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700%;
+    line-height: 150%;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e031b2;
+}
+
+h1{
+  font-size: 30px;
+  color: #d34593;
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+}
+
+.cabecalho1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #fd0db5;
+    padding-bottom: 40PX;
+}
+
+.cabecalho1 .titulo{
+color: #d41896;
+text-align: center;
+font-family: "Zen Dots";
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
+margin: 0;
+}
+
+.cabecalho1 .titulo span{
+    color: #ffffff;
 }

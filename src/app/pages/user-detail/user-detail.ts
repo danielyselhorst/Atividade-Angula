@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UserService } from '../../services/user.services';
 import { UserInterface } from '../../models/user.interface';
 import { CommonModule } from '@angular/common';
@@ -7,64 +7,64 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './user-detail.html',
   styleUrls: ['./user-detail.css'],
 })
 export class UserDetail implements OnInit {
 
-  usuario?: UserInterface;
+  usuario?: UserInterface; // ele guarda os dados do usuário encontrado
 
   loading = true;
   erro = false;
   naoEncontrado = false;
   idInvalido = false;
 
-  constructor(
-    private route: ActivatedRoute,
-    private userService: UserService
-  ) {}
+constructor(
+  private route: ActivatedRoute, //ele lê o ID da URL
+  private userService: UserService //ele busca o usuário na API
+) {}
 
-  ngOnInit() {
+ngOnInit() {
 
-    this.route.paramMap.subscribe(params => {
+  this.route.paramMap.subscribe(params => { // ele atualiza altomatimacente
 
-    //RESETAR ESTADOS AQUI
-    this.loading = true;
-    this.erro = false;
-    this.naoEncontrado = false;
-    this.idInvalido = false;
-    this.usuario = undefined;
+  //vai limpar tudo antes de procurar outro usuario
+  this.loading = true;
+  this.erro = false;
+  this.naoEncontrado = false;
+  this.idInvalido = false;
+  this.usuario = undefined;
 
-    //PEGAR O ID DA URL
-    const idParam = params.get('id');
+const idParam = params.get('id'); // ele pega o ID da URL
 
-if (!idParam || isNaN(Number(idParam))) {
+
+//validar se o ID é invalido
+if (!idParam || isNaN(Number(idParam))) { // se alguem digitar letra ele vai ativar como invalido
   this.idInvalido = true;
   this.loading = false;
   return;
 }
 
-const id = Number(idParam);
+const id = Number(idParam); //ele converte para numero
 
-// AQUI É ONDE ARRUMA
-if (id < 1 || id > 10) {
+if (id < 1 || id > 10) { // se for < 1 ou > 10 ele valida o nao encontrado
   this.naoEncontrado = true;
   this.loading = false;
   return;
 }
 
-// Depois disso continua normal
+
 this.userService.buscarUsuarioPorId(id).subscribe({
-  next: (dados) => {
+  next: (dados) => { //ele vai guardar o dados para loading e atualizar a tela
     this.usuario = dados;
     this.loading = false;
   },
-  error: () => {
+  error: () => { 
     this.erro = true;
     this.loading = false;
   }
 });
-    });
+});
   }
 }

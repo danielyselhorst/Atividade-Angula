@@ -6,7 +6,10 @@ export const routes: Routes = [
   { path: 'user-list',
      component: UsersList },
 
-  { path: 'users-detail/:id',
+  { path: 'user-detail/:id',
+     component: UserDetail },
+
+   { path: 'user-detail',
      component: UserDetail },
 
 ];

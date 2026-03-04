@@ -1,18 +1,26 @@
+ <header class="cabecalho1">
+  <br>
+    <h1 class="titulo">Contato  <span>do </span> usuário </h1> 
+</header>
+
 <div class="container">
 
-  <div *ngIf="loading" class="status">Carregando...</div>
+<div *ngIf="loading">Carregando...</div>
 
-  <div *ngIf="idInvalido" class="status erro">
-    ID inválido.
-  </div>
+<div *ngIf="!loading && idInvalido">ID inválido</div>
 
-  <div *ngIf="naoEncontrado" class="status erro">
-    Usuário não encontrado.
-  </div>
+<div *ngIf="!loading && naoEncontrado">Usuário não encontrado</div>
 
-  <div *ngIf="usuario" class="card">
-
-    <h1>{{ usuario.name }}</h1>
+<div *ngIf="!loading && usuario">
+<h3>
+    <ng-content>
+    </ng-content>
+</h3>
+<h3>
+    <ng-content>
+      <h1>{{ usuario.name }}</h1>
+    </ng-content>
+</h3>
 
     <p><strong>Email:</strong> {{ usuario.email }}</p>
     <p><strong>Telefone:</strong> {{ usuario.phone }}</p>
@@ -20,8 +28,8 @@
     <p><strong>Cidade:</strong> {{ usuario.address.city }}</p>
     <p><strong>Empresa:</strong> {{ usuario.company.name }}</p>
 
-    <a routerLink="/users" class="btn-voltar">
-      ← Voltar
+    <a routerLink="/user-list" class="btn-voltar">
+       Voltar
     </a>
 
   </div>
