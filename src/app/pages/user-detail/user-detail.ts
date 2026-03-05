@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UserService } from '../../services/user.services';
 import { UserInterface } from '../../models/user.interface';
@@ -22,7 +22,9 @@ export class UserDetail implements OnInit {
 
 constructor(
   private route: ActivatedRoute, //ele lê o ID da URL
-  private userService: UserService //ele busca o usuário na API
+  private userService: UserService, //ele busca o usuário na API
+  private cdr: ChangeDetectorRef
+
 ) {}
 
 ngOnInit() {
@@ -35,6 +37,7 @@ ngOnInit() {
   this.naoEncontrado = false;
   this.idInvalido = false;
   this.usuario = undefined;
+  
 
 const idParam = params.get('id'); // ele pega o ID da URL
 
@@ -58,6 +61,7 @@ if (id < 1 || id > 10) { // se for < 1 ou > 10 ele valida o nao encontrado
 this.userService.buscarUsuarioPorId(id).subscribe({
   next: (dados) => { //ele vai guardar o dados para loading e atualizar a tela
     this.usuario = dados;
+    this.cdr.detectChanges();
     this.loading = false;
   },
   error: () => { 

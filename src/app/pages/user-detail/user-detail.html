@@ -1,8 +1,18 @@
- <header class="cabecalho1">
-  <br>
-    <h1 class="titulo">Contato  <span>do </span> usuário </h1> 
-</header>
-
+<div class="agenda-container">
+ 
+  <header class="topo-vibrante">
+    <div class="logo-texto">
+      <span class="titulo-principal">Contatos</span>
+      <span class="subtitulo">Sua lista de contatos</span>
+    </div>
+ 
+    <div class="flores-container">
+   <a href="https://www.glitter-graphics.com"><img src="http://dl5.glitter-graphics.net/pub/725/725325v80m0346dj.gif" width=96 height=91 border=0></a>
+    </div>
+   
+    <div class="curva-rosa"></div>
+  </header>
+  
 <div class="container">
 
 <div *ngIf="loading">Carregando...</div>
@@ -22,7 +32,7 @@
     </ng-content>
 </h3>
 
-    <p><strong>Email:</strong> {{ usuario.email }}</p>
+    <p><strong>Email1:</strong> {{ usuario.email }}</p>
     <p><strong>Telefone:</strong> {{ usuario.phone }}</p>
     <p><strong>Website:</strong> {{ usuario.website }}</p>
     <p><strong>Cidade:</strong> {{ usuario.address.city }}</p>

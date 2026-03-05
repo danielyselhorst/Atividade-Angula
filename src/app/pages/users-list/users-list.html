@@ -1,12 +1,19 @@
-  <header class="cabecalho1">
-  <br>
-    <h1 class="titulo">Lista  <span>dos </span> usuários</h1>
-
-</header>
+<div class="agenda-container">
+ 
+  <header class="topo-vibrante">
+    <div class="logo-texto">
+      <span class="titulo-principal">Contatos</span>
+      <span class="subtitulo">Sua lista de contatos</span>
+    </div>
+ 
+    <div class="flores-container">
+   <a href="https://www.glitter-graphics.com"><img src="http://dl5.glitter-graphics.net/pub/725/725325v80m0346dj.gif" width=96 height=91 border=0></a>
+    </div>
+   
+    <div class="curva-rosa"></div>
+  </header>
 
 <div class="container">
-
-  <h1>Contatos1</h1>
 
   <div *ngIf="loading" class="status do loading">Carregando...</div>
   <div *ngIf="erro" class="status do erro">Erro ao carregar usuários.</div>

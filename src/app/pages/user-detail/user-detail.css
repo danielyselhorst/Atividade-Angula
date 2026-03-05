@@ -1,5 +1,5 @@
 .container {
-    border: 2px solid #fa6ad6;
+    border: 2px solid #e9498a;;
     background-color: #f8f9fa;
     box-shadow: 0px 8px 16px 0px rgba(61,139,253,0.15);
     max-width: 100%;
@@ -23,14 +23,14 @@ p {
 
 .container h1 {
   margin-bottom: 20px;
-  color: #e24ebd;
+  color: #e9498a;;
 }
 
 .btn-voltar {
   display: inline-block;
   margin-top: 30px;
   padding: 12px 30px;
-  background-color: #fa6ad6;
+  background-color: #e9498a;;
   color: white;
   text-decoration: none;
   border-radius: 10px;
@@ -41,36 +41,48 @@ p {
 }
 
 h3{
-    color: #e24ebd;
+    color: #e9498a;;
     font-family: 'Montserrat';
     font-size: 20px;
     font-style: normal;
     line-height: 150%;
     text-transform: uppercase;
-    border-bottom: 1px solid #e031b2;
+    border-bottom: 1px solid #e9498a;;
 }
 
-.cabecalho1{
+.flores-container{
+  margin-top: 10px;
+  width: 87%;
+
+}
+
+.topo-vibrante {
+  width: 100%;
+  height: 130px;
+  background-color: #f1e1be;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 90px;
+  overflow: visible;
+  border-bottom-left-radius: 100% 40px;  
+  border-bottom-right-radius:100% 40px;
+  border-bottom: 20px solid #e06094; 
+}
+
+.logo-texto {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    border-bottom: 2px solid #fd0db5;
-    padding-bottom: 40PX;
+    font-style: italic;
+}
+ 
+
+.titulo-principal {
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: #e9498a;
+      font-style: italic;
+      line-height: 1.5;
 }
 
-.cabecalho1 .titulo{
-color: #d41896;
-text-align: center;
-font-family: "Zen Dots";
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: 150%;
-margin: 0;
-}
-
-.cabecalho1 .titulo span{
-    color: #ffffff;
-}
